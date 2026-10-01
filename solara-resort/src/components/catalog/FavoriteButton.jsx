@@ -1,0 +1,67 @@
+import React from 'react';
+import { Heart } from 'lucide-react';
+import { useApp } from '../../context/AppContext.jsx';
+
+export const FavoriteButton = ({
+  kind,
+  id,
+  className = '',
+  size = 'md',
+}) => {
+  const {
+    isFavoriteResort,
+    isFavoriteRoom,
+    toggleFavoriteResort,
+    toggleFavoriteRoom,
+    t,
+  } = useApp();
+
+  if (id == null || id === '') return null;
+
+  const active =
+    kind === 'room' ? isFavoriteRoom(id) : isFavoriteResort(id);
+
+  const handleClick = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    if (kind === 'room') {
+      toggleFavoriteRoom(id);
+    } else {
+      toggleFavoriteResort(id);
+    }
+  };
+
+  const sizeClasses =
+    size === 'sm'
+      ? 'w-8 h-8'
+      : size === 'lg'
+        ? 'w-11 h-11'
+        : 'w-9 h-9';
+
+  const iconSize =
+    size === 'sm' ? 'w-3.5 h-3.5' : size === 'lg' ? 'w-5 h-5' : 'w-4 h-4';
+
+  const label = active
+    ? t('favorites.remove', 'Remove from favorites')
+    : t('favorites.add', 'Save to favorites');
+
+  return (
+    <button
+      type="button"
+      onClick={handleClick}
+      aria-pressed={active}
+      aria-label={label}
+      title={label}
+      className={`inline-flex items-center justify-center rounded-full border backdrop-blur-md transition-all duration-200 shrink-0 ${sizeClasses} ${
+        active
+          ? 'bg-gold/20 border-gold/60 text-gold shadow-sm'
+          : 'bg-slate-950/75 border-white/15 text-white hover:border-gold/40 hover:text-gold-light'
+      } ${className}`}
+    >
+      <Heart
+        className={`${iconSize} ${active ? 'fill-gold text-gold' : ''}`}
+        strokeWidth={active ? 0 : 2}
+      />
+    </button>
+  );
+};

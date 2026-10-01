@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Poppins', 'Kantumruy Pro', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', 'Kantumruy Pro', Georgia, serif;
+
+  --color-bg: var(--color-bg);
+  --color-bg-secondary: var(--color-bg-secondary);
+  --color-surface: var(--color-surface);
+  --color-surface-hover: var(--color-surface-hover);
+  --color-surface-elevated: var(--color-surface-elevated);
+  --color-border: var(--color-border);
+  --color-border-subtle: var(--color-border-subtle);
+  --color-text: var(--color-text);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-muted: var(--color-muted);
+  --color-gold: var(--color-gold);
+  --color-gold-hover: var(--color-gold-hover);
+  --color-gold-light: var(--color-gold-light);
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-error: var(--color-error);
+  --color-info: var(--color-info);
+
+  --radius-card: 14px;
+  --radius-button: 10px;
+  --radius-input: 10px;
+  --radius-modal: 16px;
+}
+
+:root, [data-theme="dark"] {
+  --color-bg: #0a0e17;
+  --color-bg-secondary: #06090f;
+  --color-surface: #111726;
+  --color-surface-hover: #172033;
+  --color-surface-elevated: #1a243a;
+  --color-border: #232f48;
+  --color-border-subtle: #192236;
+  --color-text: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-muted: #8493ad;
+  --color-gold: #c89b4f;
+  --color-gold-hover: #dbaf64;
+  --color-gold-light: #fbeed4;
+  --color-primary: #0284c7;
+  --color-primary-hover: #0369a1;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #38bdf8;
+}
+
+[data-theme="light"] {
+  --color-bg: #f8f6f0;
+  --color-bg-secondary: #f0ebe1;
+  --color-surface: #ffffff;
+  --color-surface-hover: #faf7f2;
+  --color-surface-elevated: #ffffff;
+  --color-border: #e2dacd;
+  --color-border-subtle: #ede6dc;
+  --color-text: #1a2233;
+  --color-text-secondary: #4a5568;
+  --color-muted: #748094;
+  --color-gold: #a67b2e;
+  --color-gold-hover: #8f6721;
+  --color-gold-light: #644911;
+  --color-primary: #0369a1;
+  --color-primary-hover: #075985;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --color-info: #0284c7;
+}
+
+html {
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+/* Khmer Typography Optimization */
+html[lang="km"] {
+  font-family: 'Kantumruy Pro', 'Poppins', system-ui, sans-serif;
+}
+
+html[lang="km"] body {
+  line-height: 1.65;
+}
+
+html[lang="km"] .font-serif,
+html[lang="km"] h1,
+html[lang="km"] h2,
+html[lang="km"] h3,
+html[lang="km"] h4 {
+  font-family: 'Kantumruy Pro', 'Playfair Display', Georgia, serif;
+  letter-spacing: normal;
+}
+

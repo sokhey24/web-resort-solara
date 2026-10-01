@@ -1,0 +1,28 @@
+export const ROUTES = {
+  home: '/',
+  resorts: '/resorts',
+  resortDetail: (id) => `/resort/${id}`,
+  rooms: '/rooms',
+  roomDetail: (id) => `/room/${id}`,
+  about: '/about',
+  activities: '/activities',
+  services: '/services',
+  dining: '/dining',
+  gallery: '/gallery',
+  contact: '/contact',
+  login: '/login',
+  register: '/register',
+  forgotPassword: '/forgot-password',
+  verifyOtp: '/verify-otp',
+  resetPassword: '/reset-password',
+  booking: '/booking',
+  payment: '/payment',
+  bookingConfirm: '/booking-confirm',
+  account: '/account',
+  accountBookings: '/account/bookings',
+  accountNotifications: '/account/notifications',
+  accountSettings: '/account/settings',
+  accountFavorites: '/account/favorites',
+};
+
+export default ROUTES;
